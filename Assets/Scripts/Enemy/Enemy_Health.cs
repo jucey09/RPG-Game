@@ -1,0 +1,20 @@
+using UnityEngine;
+
+public class Enemy_Health : Entity_Health
+{
+    private Enemy enemy => GetComponent<Enemy>();
+
+    public override bool TakeDamage(float damage, float elementalDamage, ElementType element, Transform damageDealer)
+    {
+        bool targetHit = base.TakeDamage(damage, elementalDamage, element, damageDealer);
+ 
+        if (!targetHit)
+            return false;
+ 
+        if (damageDealer.GetComponent<Player>() != null)
+            enemy.TryEnterBattleState(damageDealer);
+ 
+        return true;
+    }
+
+}

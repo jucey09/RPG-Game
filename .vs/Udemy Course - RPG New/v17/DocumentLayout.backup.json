@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Unity Projects\\Projects - Courses\\Udemy Course - RPG New\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{02F0653F-4C27-A2E8-A4D0-DDA59BA58F15}|Assembly-CSharp.csproj|E:\\Unity Projects\\Projects - Courses\\Udemy Course - RPG New\\assets\\scripts\\parallaxbackground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02F0653F-4C27-A2E8-A4D0-DDA59BA58F15}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\parallaxbackground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02F0653F-4C27-A2E8-A4D0-DDA59BA58F15}|Assembly-CSharp.csproj|e:\\unity projects\\projects - courses\\udemy course - rpg new\\assets\\scripts\\parallaxlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02F0653F-4C27-A2E8-A4D0-DDA59BA58F15}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\parallaxlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ParallaxLayer.cs",
+              "DocumentMoniker": "E:\\Unity Projects\\Projects - Courses\\Udemy Course - RPG New\\Assets\\Scripts\\ParallaxLayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ParallaxLayer.cs",
+              "ToolTip": "E:\\Unity Projects\\Projects - Courses\\Udemy Course - RPG New\\Assets\\Scripts\\ParallaxLayer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ParallaxLayer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T08:51:44.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ParallaxBackground.cs",
+              "DocumentMoniker": "E:\\Unity Projects\\Projects - Courses\\Udemy Course - RPG New\\Assets\\Scripts\\ParallaxBackground.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ParallaxBackground.cs",
+              "ToolTip": "E:\\Unity Projects\\Projects - Courses\\Udemy Course - RPG New\\Assets\\Scripts\\ParallaxBackground.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ParallaxBackground.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T07:56:18.444Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
