@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Entity_Combat : MonoBehaviour
 {
-    private Entity_VFX vfx;
-    private Entity_Stats stats;
+    // private Entity_VFX vfx;
+    // private Entity_Stats stats;
 
-    // [SerializeField] private Entity_Stats stats;
-    // [SerializeField] private Entity_VFX vfx;
+    [SerializeField] private Entity_Stats stats;
+    [SerializeField] private Entity_VFX vfx;
 
     public DamageScaleData basicAttackScale;
 
@@ -17,8 +17,8 @@ public class Entity_Combat : MonoBehaviour
 
 private void Awake()
     {
-        vfx = GetComponent<Entity_VFX>();
-        stats = GetComponent<Entity_Stats>();
+        // vfx = GetComponentInParent<Entity_VFX>();
+        // stats = GetComponentInParent<Entity_Stats>();
     }
 
     public void PerformAttack()

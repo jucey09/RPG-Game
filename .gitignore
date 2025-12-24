@@ -1,0 +1,16 @@
+/*
+
+# Except keep these files and the Assets directory
+!/.gitignore
+!/.gitattributes
+!/Assets
+!/Assets/**
+
+# Keep Git metadata
+!/.git
+
+# (Optional) keep readme
+!README.md
+
+# Also ensure LFS attributes remain tracked
+/.gitattributes
