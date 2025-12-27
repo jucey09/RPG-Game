@@ -25,7 +25,12 @@ public abstract class PlayerState : EntityState
         { 
             skillManager.dash.SetSkillOnCooldown();
             stateMachine.ChangeState(player.dashState);
+        } else if (input.Player.CDash.WasPressedThisFrame() && CanDash())
+        {
+            skillManager.dash.SetSkillOnCooldown();
+            stateMachine.ChangeState(player.dashState);
         }
+  
     }
 
     public override void UpdateAnimationParameters()

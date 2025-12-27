@@ -48,6 +48,13 @@ public class Player : Entity
     public float dashSpeed = 20;
     public Vector2 moveInput { get; private set; }
     public Vector2 mousePosition { get; private set; }
+    
+    [Header("Input")]
+    [Range(0f, 1f)]
+    [Tooltip("Joystick deadzone / snap threshold. If axis magnitude >= this value it snaps to full (1).")]
+    public float joystickSnapThreshold = 0.2f;
+    [Tooltip("When using controller stick for aiming, how many screen pixels from the player the stick maps to at full tilt.")]
+    public float controllerAimRadius = 200f;
 
     protected override void Awake()
     {
@@ -148,6 +155,8 @@ public class Player : Entity
     {
         input.Enable();
 
+        //mouse and keyboard
+
         input.Player.Mouse.performed += ctx => mousePosition = ctx.ReadValue<Vector2>();
 
         input.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
@@ -155,6 +164,53 @@ public class Player : Entity
 
         input.Player.ToggleSkillTreeUI.performed += ctx => ui.ToggleSkillTree();
         input.Player.Spell.performed += ctx => skillManager.shard.TryUseSkill();
+
+        //controller
+        input.Player.CAim.performed += ctx => ProcessControllerAim(ctx.ReadValue<Vector2>());
+
+        input.Player.CMovement.performed += ctx => moveInput = ProcessMoveInput(ctx.ReadValue<Vector2>());
+        input.Player.CMovement.canceled += ctx => moveInput = Vector2.zero;
+
+        input.Player.CToggleSkillTreeUI.performed += ctx => ui.ToggleSkillTree();
+        input.Player.CSpell.performed += ctx => skillManager.shard.TryUseSkill();
+    }
+
+    private Vector2 ProcessMoveInput(Vector2 raw)
+    {
+        Vector2 processed = raw;
+
+        // Horizontal
+        if (Mathf.Abs(raw.x) < joystickSnapThreshold)
+            processed.x = 0f;
+        else
+            processed.x = Mathf.Sign(raw.x);
+
+        // Vertical
+        if (Mathf.Abs(raw.y) < joystickSnapThreshold)
+            processed.y = 0f;
+        else
+            processed.y = Mathf.Sign(raw.y);
+
+        return processed;
+    }
+
+    private void ProcessControllerAim(Vector2 raw)
+    {
+        Camera cam = Camera.main;
+        if (cam == null)
+            return;
+
+        // If stick is near center, aim at player (so projectiles go forward)
+        if (raw.sqrMagnitude < joystickSnapThreshold * joystickSnapThreshold)
+        {
+            Vector3 playerScreen = cam.WorldToScreenPoint(transform.position);
+            mousePosition = playerScreen;
+            return;
+        }
+
+        Vector3 playerScreenPos = cam.WorldToScreenPoint(transform.position);
+        Vector2 aimScreen = (Vector2)playerScreenPos + raw * controllerAimRadius;
+        mousePosition = aimScreen;
     }
 
     private void OnDisable()

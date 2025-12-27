@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72036f8fac6934236acfabc539db57b2, type: 3}
-  m_Name: Skill Data - Timeless Attack
+  m_Name: Skill data - The bulletsword
   m_EditorClassIdentifier: 
-  displayName: Timeless Attack
-  description: The echo can perform 1 attack.
-  icon: {fileID: 338110713, guid: a14ba65ef1ecb4f07a23068efb3a7670, type: 3}
+  displayName: The Bullet Sword
+  description: The sword can pierces up to 3 targets
+  icon: {fileID: 1235955757, guid: a14ba65ef1ecb4f07a23068efb3a7670, type: 3}
   cost: 2
   unlockedByDefault: 0
-  skillType: 0
+  skillType: 3
   upgradeData:
-    upgradeType: 0
+    upgradeType: 13
     cooldown: 0
     damageScaleData:
       physical: 1

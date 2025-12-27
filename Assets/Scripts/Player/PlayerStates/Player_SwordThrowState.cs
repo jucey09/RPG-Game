@@ -28,7 +28,7 @@ public class Player_SwordThrowState : PlayerState
         player.HandleFlip(dirToMouse.x);
         skillManager.swordThrow.PredictTrajectory(dirToMouse);
 
-        if (input.Player.Attack.WasPressedThisFrame())
+        if (input.Player.Attack.WasPressedThisFrame() || input.Player.CAttack.WasPressedThisFrame())
         {
             anim.SetBool("swordThrowPerformed", true);
 

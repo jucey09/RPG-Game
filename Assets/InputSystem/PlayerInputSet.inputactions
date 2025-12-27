@@ -85,6 +85,87 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "CMovement",
+                    "type": "Value",
+                    "id": "9838c5f9-dd31-4450-8a32-615f92f3ca5f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "CJump",
+                    "type": "Button",
+                    "id": "f1742276-ad49-4cff-bfff-a3c2772053eb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CDash",
+                    "type": "Button",
+                    "id": "b6271461-44a9-474a-9a0e-b7e6c637a612",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CAttack",
+                    "type": "Button",
+                    "id": "9cf2dee3-560b-408d-9df9-4224f04e2051",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CCounterAttack",
+                    "type": "Button",
+                    "id": "12f69bdd-1b9c-4dfb-95ca-b50bb7cdc737",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CToggleSkillTreeUI",
+                    "type": "Button",
+                    "id": "d38a504d-b129-46db-acf6-d7a4d1168293",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CSpell",
+                    "type": "Button",
+                    "id": "4d782d13-09c6-4815-b6f8-77ea74a2fc08",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CRangedAttack",
+                    "type": "Button",
+                    "id": "94634d91-8b71-4fcd-9095-43618829bdd3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CAim",
+                    "type": "Value",
+                    "id": "266bb86b-b1d2-47b3-88f6-aa16859fada1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -230,6 +311,105 @@
                     "action": "Mouse",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d402f60c-efdc-48d5-be80-aea1f430c49b",
+                    "path": "<HID::Core (Plus) Wired Controller>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "CMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a13081c8-7663-4dcf-be25-f7e2cf5fbd19",
+                    "path": "<HID::Core (Plus) Wired Controller>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "CJump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6a1db7df-70c4-475c-9e19-1834dfe749e9",
+                    "path": "<HID::Core (Plus) Wired Controller>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "CDash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "891852ec-fbcb-4cb1-92c6-15af249bada3",
+                    "path": "<HID::Core (Plus) Wired Controller>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "CAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba40794e-b16e-45e5-abf1-2635090e9c30",
+                    "path": "<HID::Core (Plus) Wired Controller>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "CCounterAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41f353ac-664f-443d-9cc3-2230171f3a9d",
+                    "path": "<HID::Core (Plus) Wired Controller>/button13",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "CToggleSkillTreeUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "043bd75a-0dfe-4d20-a64d-9dc203a6c470",
+                    "path": "<HID::Core (Plus) Wired Controller>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "CSpell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8d8845f-1893-48b6-af97-7e63dba758e3",
+                    "path": "<HID::Core (Plus) Wired Controller>/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "CRangedAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a505fb42-fd8b-478d-8195-e63f4fbbd96b",
+                    "path": "<HID::Core (Plus) Wired Controller>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "CAim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -246,6 +426,17 @@
                 },
                 {
                     "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Controller",
+            "bindingGroup": "Controller",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }

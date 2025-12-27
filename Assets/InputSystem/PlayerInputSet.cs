@@ -171,6 +171,87 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CMovement"",
+                    ""type"": ""Value"",
+                    ""id"": ""9838c5f9-dd31-4450-8a32-615f92f3ca5f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CJump"",
+                    ""type"": ""Button"",
+                    ""id"": ""f1742276-ad49-4cff-bfff-a3c2772053eb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CDash"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6271461-44a9-474a-9a0e-b7e6c637a612"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""9cf2dee3-560b-408d-9df9-4224f04e2051"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CCounterAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""12f69bdd-1b9c-4dfb-95ca-b50bb7cdc737"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CToggleSkillTreeUI"",
+                    ""type"": ""Button"",
+                    ""id"": ""d38a504d-b129-46db-acf6-d7a4d1168293"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CSpell"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d782d13-09c6-4815-b6f8-77ea74a2fc08"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CRangedAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""94634d91-8b71-4fcd-9095-43618829bdd3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CAim"",
+                    ""type"": ""Value"",
+                    ""id"": ""266bb86b-b1d2-47b3-88f6-aa16859fada1"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -316,6 +397,105 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
                     ""action"": ""Mouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d402f60c-efdc-48d5-be80-aea1f430c49b"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""CMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a13081c8-7663-4dcf-be25-f7e2cf5fbd19"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""CJump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a1db7df-70c4-475c-9e19-1834dfe749e9"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/button8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""CDash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""891852ec-fbcb-4cb1-92c6-15af249bada3"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""CAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba40794e-b16e-45e5-abf1-2635090e9c30"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/button4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""CCounterAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""41f353ac-664f-443d-9cc3-2230171f3a9d"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/button13"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""CToggleSkillTreeUI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""043bd75a-0dfe-4d20-a64d-9dc203a6c470"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/button3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""CSpell"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b8d8845f-1893-48b6-af97-7e63dba758e3"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/button7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""CRangedAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a505fb42-fd8b-478d-8195-e63f4fbbd96b"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""CAim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -336,6 +516,17 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Controller"",
+            ""bindingGroup"": ""Controller"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -350,6 +541,15 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         m_Player_Spell = m_Player.FindAction("Spell", throwIfNotFound: true);
         m_Player_RangeAttack = m_Player.FindAction("RangeAttack", throwIfNotFound: true);
         m_Player_Mouse = m_Player.FindAction("Mouse", throwIfNotFound: true);
+        m_Player_CMovement = m_Player.FindAction("CMovement", throwIfNotFound: true);
+        m_Player_CJump = m_Player.FindAction("CJump", throwIfNotFound: true);
+        m_Player_CDash = m_Player.FindAction("CDash", throwIfNotFound: true);
+        m_Player_CAttack = m_Player.FindAction("CAttack", throwIfNotFound: true);
+        m_Player_CCounterAttack = m_Player.FindAction("CCounterAttack", throwIfNotFound: true);
+        m_Player_CToggleSkillTreeUI = m_Player.FindAction("CToggleSkillTreeUI", throwIfNotFound: true);
+        m_Player_CSpell = m_Player.FindAction("CSpell", throwIfNotFound: true);
+        m_Player_CRangedAttack = m_Player.FindAction("CRangedAttack", throwIfNotFound: true);
+        m_Player_CAim = m_Player.FindAction("CAim", throwIfNotFound: true);
     }
 
     ~@PlayerInputSet()
@@ -439,6 +639,15 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Spell;
     private readonly InputAction m_Player_RangeAttack;
     private readonly InputAction m_Player_Mouse;
+    private readonly InputAction m_Player_CMovement;
+    private readonly InputAction m_Player_CJump;
+    private readonly InputAction m_Player_CDash;
+    private readonly InputAction m_Player_CAttack;
+    private readonly InputAction m_Player_CCounterAttack;
+    private readonly InputAction m_Player_CToggleSkillTreeUI;
+    private readonly InputAction m_Player_CSpell;
+    private readonly InputAction m_Player_CRangedAttack;
+    private readonly InputAction m_Player_CAim;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -486,6 +695,42 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Mouse".
         /// </summary>
         public InputAction @Mouse => m_Wrapper.m_Player_Mouse;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/CMovement".
+        /// </summary>
+        public InputAction @CMovement => m_Wrapper.m_Player_CMovement;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/CJump".
+        /// </summary>
+        public InputAction @CJump => m_Wrapper.m_Player_CJump;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/CDash".
+        /// </summary>
+        public InputAction @CDash => m_Wrapper.m_Player_CDash;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/CAttack".
+        /// </summary>
+        public InputAction @CAttack => m_Wrapper.m_Player_CAttack;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/CCounterAttack".
+        /// </summary>
+        public InputAction @CCounterAttack => m_Wrapper.m_Player_CCounterAttack;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/CToggleSkillTreeUI".
+        /// </summary>
+        public InputAction @CToggleSkillTreeUI => m_Wrapper.m_Player_CToggleSkillTreeUI;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/CSpell".
+        /// </summary>
+        public InputAction @CSpell => m_Wrapper.m_Player_CSpell;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/CRangedAttack".
+        /// </summary>
+        public InputAction @CRangedAttack => m_Wrapper.m_Player_CRangedAttack;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/CAim".
+        /// </summary>
+        public InputAction @CAim => m_Wrapper.m_Player_CAim;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -539,6 +784,33 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
             @Mouse.started += instance.OnMouse;
             @Mouse.performed += instance.OnMouse;
             @Mouse.canceled += instance.OnMouse;
+            @CMovement.started += instance.OnCMovement;
+            @CMovement.performed += instance.OnCMovement;
+            @CMovement.canceled += instance.OnCMovement;
+            @CJump.started += instance.OnCJump;
+            @CJump.performed += instance.OnCJump;
+            @CJump.canceled += instance.OnCJump;
+            @CDash.started += instance.OnCDash;
+            @CDash.performed += instance.OnCDash;
+            @CDash.canceled += instance.OnCDash;
+            @CAttack.started += instance.OnCAttack;
+            @CAttack.performed += instance.OnCAttack;
+            @CAttack.canceled += instance.OnCAttack;
+            @CCounterAttack.started += instance.OnCCounterAttack;
+            @CCounterAttack.performed += instance.OnCCounterAttack;
+            @CCounterAttack.canceled += instance.OnCCounterAttack;
+            @CToggleSkillTreeUI.started += instance.OnCToggleSkillTreeUI;
+            @CToggleSkillTreeUI.performed += instance.OnCToggleSkillTreeUI;
+            @CToggleSkillTreeUI.canceled += instance.OnCToggleSkillTreeUI;
+            @CSpell.started += instance.OnCSpell;
+            @CSpell.performed += instance.OnCSpell;
+            @CSpell.canceled += instance.OnCSpell;
+            @CRangedAttack.started += instance.OnCRangedAttack;
+            @CRangedAttack.performed += instance.OnCRangedAttack;
+            @CRangedAttack.canceled += instance.OnCRangedAttack;
+            @CAim.started += instance.OnCAim;
+            @CAim.performed += instance.OnCAim;
+            @CAim.canceled += instance.OnCAim;
         }
 
         /// <summary>
@@ -577,6 +849,33 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
             @Mouse.started -= instance.OnMouse;
             @Mouse.performed -= instance.OnMouse;
             @Mouse.canceled -= instance.OnMouse;
+            @CMovement.started -= instance.OnCMovement;
+            @CMovement.performed -= instance.OnCMovement;
+            @CMovement.canceled -= instance.OnCMovement;
+            @CJump.started -= instance.OnCJump;
+            @CJump.performed -= instance.OnCJump;
+            @CJump.canceled -= instance.OnCJump;
+            @CDash.started -= instance.OnCDash;
+            @CDash.performed -= instance.OnCDash;
+            @CDash.canceled -= instance.OnCDash;
+            @CAttack.started -= instance.OnCAttack;
+            @CAttack.performed -= instance.OnCAttack;
+            @CAttack.canceled -= instance.OnCAttack;
+            @CCounterAttack.started -= instance.OnCCounterAttack;
+            @CCounterAttack.performed -= instance.OnCCounterAttack;
+            @CCounterAttack.canceled -= instance.OnCCounterAttack;
+            @CToggleSkillTreeUI.started -= instance.OnCToggleSkillTreeUI;
+            @CToggleSkillTreeUI.performed -= instance.OnCToggleSkillTreeUI;
+            @CToggleSkillTreeUI.canceled -= instance.OnCToggleSkillTreeUI;
+            @CSpell.started -= instance.OnCSpell;
+            @CSpell.performed -= instance.OnCSpell;
+            @CSpell.canceled -= instance.OnCSpell;
+            @CRangedAttack.started -= instance.OnCRangedAttack;
+            @CRangedAttack.performed -= instance.OnCRangedAttack;
+            @CRangedAttack.canceled -= instance.OnCRangedAttack;
+            @CAim.started -= instance.OnCAim;
+            @CAim.performed -= instance.OnCAim;
+            @CAim.canceled -= instance.OnCAim;
         }
 
         /// <summary>
@@ -621,6 +920,19 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         {
             if (m_KeyboardMouseSchemeIndex == -1) m_KeyboardMouseSchemeIndex = asset.FindControlSchemeIndex("Keyboard & Mouse");
             return asset.controlSchemes[m_KeyboardMouseSchemeIndex];
+        }
+    }
+    private int m_ControllerSchemeIndex = -1;
+    /// <summary>
+    /// Provides access to the input control scheme.
+    /// </summary>
+    /// <seealso cref="UnityEngine.InputSystem.InputControlScheme" />
+    public InputControlScheme ControllerScheme
+    {
+        get
+        {
+            if (m_ControllerSchemeIndex == -1) m_ControllerSchemeIndex = asset.FindControlSchemeIndex("Controller");
+            return asset.controlSchemes[m_ControllerSchemeIndex];
         }
     }
     /// <summary>
@@ -693,5 +1005,68 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMouse(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CMovement" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCMovement(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CJump" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCJump(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CDash" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCDash(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CAttack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CCounterAttack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCCounterAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CToggleSkillTreeUI" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCToggleSkillTreeUI(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CSpell" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCSpell(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CRangedAttack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCRangedAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CAim" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCAim(InputAction.CallbackContext context);
     }
 }
