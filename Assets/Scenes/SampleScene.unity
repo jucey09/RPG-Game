@@ -3670,9 +3670,9 @@ RectTransform:
   m_Children:
   - {fileID: 2129821717}
   - {fileID: 1686871357}
+  - {fileID: 1357503836}
   - {fileID: 978437816}
   - {fileID: 238180326}
-  - {fileID: 1357503836}
   m_Father: {fileID: 266310778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4641,10 +4641,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillType: 3
-  upgradeType: 11
+  upgradeType: 12
   cooldown: 0
   swordPrefab: {fileID: 5982919069896479518, guid: 06d192a472295424b88caddc03b488f7, type: 3}
   throwPower: 3
+  pierceSwordPrefab: {fileID: 8532999166371643717, guid: e317b48795d824521b03cc4d7b8e6782, type: 3}
+  amountToPierce: 3
+  spinSwordPrefab: {fileID: 4319360372322925286, guid: bb5810863c58244f2b5c643745280caa, type: 3}
+  maxDistance: 5
+  attacksPerSecond: 3
+  maxSpinDuration: 3
   predictionDot: {fileID: 5856344256265482136, guid: 05165e39c8eeb46049f58f73503c7e6f, type: 3}
   numberOfDots: 20
   spaceBetweenDots: 0.02
@@ -76184,10 +76190,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1285174301}
-  - {fileID: 1021513339}
+  - {fileID: 1295115274}
   - {fileID: 882246190}
   - {fileID: 2075161566}
-  - {fileID: 1295115274}
+  - {fileID: 1021513339}
   m_Father: {fileID: 266310778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -78677,10 +78683,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 944213634}
-  - {fileID: 245810637}
-  - {fileID: 831094039}
   - {fileID: 961394072}
   - {fileID: 1579683270}
+  - {fileID: 245810637}
+  - {fileID: 831094039}
   m_Father: {fileID: 266310778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

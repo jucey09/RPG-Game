@@ -9,7 +9,7 @@ public class SkillObject_Sword : SkillObject_Base
     protected float comebackSpeed = 20;
     protected float maxAllowedDistance = 25;
 
-    private void Update()
+    protected virtual void Update()
     {
         transform.right = rb.linearVelocity;
         HandleComeback();
