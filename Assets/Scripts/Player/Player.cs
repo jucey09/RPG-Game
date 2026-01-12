@@ -8,7 +8,7 @@ public class Player : Entity
     private UI ui;
     public PlayerInputSet input { get; private set; }
     public Player_SkillManager skillManager { get; private set; }
-    public Player_VFX vfx { get;  private set; } 
+    public Player_VFX vfx { get; private set; }
     public Entity_Health health { get; private set; }
     public Entity_StatusHandler statusHandler { get; private set; }
 
@@ -48,7 +48,7 @@ public class Player : Entity
     public float dashSpeed = 20;
     public Vector2 moveInput { get; private set; }
     public Vector2 mousePosition { get; private set; }
-    
+
     [Header("Input")]
     [Range(0f, 1f)]
     [Tooltip("Joystick deadzone / snap threshold. If axis magnitude >= this value it snaps to full (1).")]
@@ -90,7 +90,7 @@ public class Player : Entity
     }
 
     public void TeleportPlayer(Vector3 position) => transform.position = position;
-    
+
 
     protected override IEnumerator SlowDownEntityCo(float duration, float slowMultiplier)
     {
@@ -164,6 +164,7 @@ public class Player : Entity
 
         input.Player.ToggleSkillTreeUI.performed += ctx => ui.ToggleSkillTree();
         input.Player.Spell.performed += ctx => skillManager.shard.TryUseSkill();
+        input.Player.Spell.performed += ctx => skillManager.timeEcho.TryUseSkill();
 
         //controller
         input.Player.CAim.performed += ctx => ProcessControllerAim(ctx.ReadValue<Vector2>());
@@ -173,6 +174,7 @@ public class Player : Entity
 
         input.Player.CToggleSkillTreeUI.performed += ctx => ui.ToggleSkillTree();
         input.Player.CSpell.performed += ctx => skillManager.shard.TryUseSkill();
+        input.Player.CSpell.performed += ctx => skillManager.timeEcho.TryUseSkill();
     }
 
     private Vector2 ProcessMoveInput(Vector2 raw)

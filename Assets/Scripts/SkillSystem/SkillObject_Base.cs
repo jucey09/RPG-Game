@@ -8,6 +8,8 @@ public class SkillObject_Base : MonoBehaviour
     [SerializeField] protected Transform targetCheck;
     [SerializeField] protected float checkRadius = 1;
 
+    protected Rigidbody2D rb;
+
     protected Animator anim;
     protected Entity_Stats playerStats;
     protected DamageScaleData damageScaleData;
@@ -17,11 +19,12 @@ public class SkillObject_Base : MonoBehaviour
     protected virtual void Awake()
     {
         anim = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     protected void DamageEnemiesInRadius(Transform t, float radius)
     {
-        foreach(var target in GetEnemiesAround(t, radius))
+        foreach (var target in GetEnemiesAround(t, radius))
         {
             IDamgable damgable = target.GetComponent<IDamgable>();
 
@@ -37,16 +40,16 @@ public class SkillObject_Base : MonoBehaviour
 
             targetGotHit = damgable.TakeDamage(physicalDamage, elementalDamage, element, transform);
 
-            if(element != ElementType.None)
+            if (element != ElementType.None)
                 statusHandler?.ApplyStatusEffect(element, attackData.effectData);
 
-            if(targetGotHit)
+            if (targetGotHit)
                 Instantiate(onHitVfx, target.transform.position, Quaternion.identity);
-                
+
             usedElement = element;
         }
     }
-    
+
     protected Transform FindClosestTarget()
     {
         Transform target = null;
