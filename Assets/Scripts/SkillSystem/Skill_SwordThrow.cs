@@ -17,8 +17,13 @@ public class Skill_SwordThrow : Skill_Base
     [SerializeField] private GameObject spinSwordPrefab;
     public int maxDistance = 5;
     public float attacksPerSecond = 3;
-    public float maxSpinDuration = 3;
     [Range(0, 10)]
+    public float maxSpinDuration = 3;
+
+    [Header("Bounce Sword Upgrade")]
+    [SerializeField] private GameObject bounceSwordPrefab;
+    public int bounceCount = 5;
+    public float bounceSpeed = 12;
 
     [Header("Trajectory Prediction")]
     [SerializeField] private GameObject predictionDot;
@@ -65,6 +70,9 @@ public class Skill_SwordThrow : Skill_Base
 
         if(Unlocked(SkillUpgradeType.SwordThrow_Spin))
             return spinSwordPrefab;
+
+        if(Unlocked(SkillUpgradeType.SwordThrow_Bounce))
+            return bounceSwordPrefab;
         
         
         Debug.Log("No valid sword upgrade selected.");

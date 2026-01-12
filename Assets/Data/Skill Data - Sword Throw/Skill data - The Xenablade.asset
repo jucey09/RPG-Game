@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skill data - The Xenablade
   m_EditorClassIdentifier: 
   displayName: The Xenablade
-  description: The sword bounces between enemies up to 3 times.
+  description: The sword bounces between enemies up to 5 times.
   icon: {fileID: -1443817130, guid: 86f3dfc2bab5847d49f7bc5358656640, type: 3}
   cost: 2
   unlockedByDefault: 0
