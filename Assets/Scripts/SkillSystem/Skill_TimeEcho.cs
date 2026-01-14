@@ -3,7 +3,12 @@ using UnityEngine;
 public class Skill_TimeEcho : Skill_Base
 {
     [SerializeField] private GameObject timeEchoPrefab;
-    [SerializeField] private float tiemEchoDuration;
+    [SerializeField] private float timeEchoDuration;
+
+    public float GetEchoDuration()
+    {
+        return timeEchoDuration;
+    }
 
     public override void TryUseSkill()
     {

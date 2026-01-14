@@ -1,31 +1,34 @@
 fileFormatVersion: 2
-guid: c201bf38431fb4865b30386a34a74b7c
+guid: 0168fc42c2c4f454e9c5f2ad0fa5638a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1460114320316644248
-    second: Enemy_AttackAlert_Outline_0
+      213: 3361160192837412643
+    second: Smoke VFX B6_0
   - first:
-      213: 6037657260665563384
-    second: Enemy_AttackAlert_Outline_1
+      213: 7280101623327626908
+    second: Smoke VFX B6_1
   - first:
-      213: 3084388393096246226
-    second: Enemy_AttackAlert_Outline_2
+      213: 6301576481501654245
+    second: Smoke VFX B6_2
   - first:
-      213: -6558722525409247296
-    second: Enemy_AttackAlert_Outline_3
+      213: -8065714293293036821
+    second: Smoke VFX B6_3
   - first:
-      213: -5056620864572294909
-    second: Enemy_AttackAlert_Outline_4
+      213: -1425154838658692751
+    second: Smoke VFX B6_4
   - first:
-      213: 8436336418516199104
-    second: Enemy_AttackAlert_Outline_5
+      213: -4126281611260054062
+    second: Smoke VFX B6_5
   - first:
-      213: 199579530897463545
-    second: Enemy_AttackAlert_Outline_6
+      213: -4621485522316282727
+    second: Smoke VFX B6_6
   - first:
-      213: 6947890740666807062
-    second: Enemy_AttackAlert_Outline_7
+      213: -7482085713719930308
+    second: Smoke VFX B6_7
+  - first:
+      213: -6495362074685342701
+    second: Smoke VFX B6_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -67,12 +70,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy_AttackAlert_Outline_0
+      name: Smoke VFX B6_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 178
-        width: 40
-        height: 60
+        x: 21
+        y: 48
+        width: 7
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 864c01ef2c1acbbe0800000000000000
-      internalID: -1460114320316644248
+      spriteID: 327e14f136d35ae20800000000000000
+      internalID: 3361160192837412643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_AttackAlert_Outline_1
+      name: Smoke VFX B6_1
       rect:
         serializedVersion: 2
-        x: 165
-        y: 176
-        width: 54
-        height: 66
+        x: 25
+        y: 51
+        width: 16
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f867892a411ac350800000000000000
-      internalID: 6037657260665563384
+      spriteID: c961033dadd180560800000000000000
+      internalID: 7280101623327626908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_AttackAlert_Outline_2
+      name: Smoke VFX B6_2
       rect:
         serializedVersion: 2
-        x: 49
-        y: 148
-        width: 29
-        height: 28
+        x: 26
+        y: 44
+        width: 20
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d3f6d7d6e2fdca20800000000000000
-      internalID: 3084388393096246226
+      spriteID: 5ecacd83c62b37750800000000000000
+      internalID: 6301576481501654245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_AttackAlert_Outline_3
+      name: Smoke VFX B6_3
       rect:
         serializedVersion: 2
-        x: 171
-        y: 139
-        width: 42
-        height: 35
+        x: 6
+        y: 30
+        width: 14
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,64 +205,108 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0cff0acdc9cbaf4a0800000000000000
-      internalID: -6558722525409247296
+      spriteID: bea4a709593d01090800000000000000
+      internalID: -8065714293293036821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_AttackAlert_Outline_4
+      name: Smoke VFX B6_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 19
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 179c1db9935d83ce0800000000000000
+      internalID: -1425154838658692751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke VFX B6_5
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 22
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d53e9d8cb08cb6c0800000000000000
+      internalID: -4126281611260054062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke VFX B6_6
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 28
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9943ab3376f2ddfb0800000000000000
+      internalID: -4621485522316282727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke VFX B6_7
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 10
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c32d2b66faa4a2890800000000000000
+      internalID: -7482085713719930308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke VFX B6_8
       rect:
         serializedVersion: 2
         x: 38
-        y: 48
-        width: 53
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 309f6536d1643d9b0800000000000000
-      internalID: -5056620864572294909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_AttackAlert_Outline_5
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 52
-        width: 54
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c669576643e31570800000000000000
-      internalID: 8436336418516199104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_AttackAlert_Outline_6
-      rect:
-        serializedVersion: 2
-        x: 42
         y: 12
-        width: 43
-        height: 37
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,30 +315,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f81593a68c05c200800000000000000
-      internalID: 199579530897463545
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_AttackAlert_Outline_7
-      rect:
-        serializedVersion: 2
-        x: 171
-        y: 16
-        width: 42
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 613bbaf21dddb6060800000000000000
-      internalID: 6947890740666807062
+      spriteID: 31cf5d26b96dbd5a0800000000000000
+      internalID: -6495362074685342701
       vertices: []
       indices: 
       edges: []
@@ -300,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -309,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Smoke VFX B6_0: 3361160192837412643
+      Smoke VFX B6_1: 7280101623327626908
+      Smoke VFX B6_2: 6301576481501654245
+      Smoke VFX B6_3: -8065714293293036821
+      Smoke VFX B6_4: -1425154838658692751
+      Smoke VFX B6_5: -4126281611260054062
+      Smoke VFX B6_6: -4621485522316282727
+      Smoke VFX B6_7: -7482085713719930308
+      Smoke VFX B6_8: -6495362074685342701
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

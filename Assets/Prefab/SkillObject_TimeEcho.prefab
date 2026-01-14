@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 470339622408128603}
   - component: {fileID: 5740764832837387546}
   - component: {fileID: 3008202957146104474}
+  - component: {fileID: 5032117892443750501}
   m_Layer: 7
   m_Name: SkillObject_TimeEcho
   m_TagString: Player
@@ -259,3 +260,28 @@ MonoBehaviour:
     m_Bits: 256
   targetCheck: {fileID: 7995190106806589540}
   checkRadius: 1
+  onDeathVfx: {fileID: 9080234879823338231, guid: e1d242415d9784dd39a79990387d3127, type: 3}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &5032117892443750501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452983536230540261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e7ab0d20ee2c473e884247a4ee5f8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 1
+  isDead: 0
+  regenInterval: 1
+  canRegenerateHealth: 1
+  knockbackPower: {x: 1.5, y: 2.5}
+  heavyKnockbackPower: {x: 7, y: 7}
+  knockbackDuration: 0.2
+  heavyKnockbackDuration: 0.5
+  heavyDamageThreshold: 0.3

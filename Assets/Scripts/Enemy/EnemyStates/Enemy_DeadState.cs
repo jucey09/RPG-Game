@@ -16,6 +16,8 @@ public class Enemy_DeadState : EnemyState
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 20);
 
         stateMachine.SwithOffStateMachine();
+        Object.Destroy(enemy.enemyObject, 2f);
 
     }
+
 }

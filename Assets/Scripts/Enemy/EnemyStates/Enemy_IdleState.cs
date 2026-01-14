@@ -11,6 +11,7 @@ public class Enemy_IdleState : Enemy_GroundedState
         base.Enter();
 
         stateTimer = enemy.idleTime;
+        anim.speed = 1;
     }
 
     public override void Update()

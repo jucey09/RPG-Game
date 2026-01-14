@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +22,7 @@ public class Entity_Health : MonoBehaviour, IDamgable
     [SerializeField] private float knockbackDuration = .2f;
     [SerializeField] private float heavyKnockbackDuration = .5f;
     [Header("On Heavy Damage ")]
-    [SerializeField] private float heavyDamageThreshold = .3f; // Percentage of health you should lose to consider damage as heavy
+    [SerializeField] private float heavyDamageThreshold = .3f;
 
     protected virtual void Awake()
     {
@@ -29,10 +30,17 @@ public class Entity_Health : MonoBehaviour, IDamgable
         entityVfx = GetComponent<Entity_VFX>();
         entityStats = GetComponent<Entity_Stats>();
         healthBar = GetComponentInChildren<Slider>();
+    
+        SetupHealth();
+    }
 
+    private void SetupHealth()
+    {
+        if(entityStats == null)
+            return;
+        
         currentHealth = entityStats.GetMaxHealth();
         UpdateHealthBar();
-
         InvokeRepeating(nameof(RegenerateHealth), 0, regenInterval);
     }
 
@@ -50,10 +58,10 @@ public class Entity_Health : MonoBehaviour, IDamgable
         Entity_Stats attakerStats = damageDealer.GetComponent<Entity_Stats>();
         float armorReduction = attakerStats != null ? attakerStats.GetArmorReduction() : 0;
 
-        float mitigation = entityStats.GetArmorMitigation(armorReduction);
+        float mitigation = entityStats != null? entityStats.GetArmorMitigation(armorReduction) : 0;
         float physicalDamgeTaken = damage * (1 - mitigation);
 
-        float resistance = entityStats.GetElementalResistance(element);
+        float resistance = entityStats != null? entityStats.GetElementalResistance(element) : 0;
         float elementalDamageTaken = elementalDamage * (1 - resistance);
 
         TakeKnockback(damageDealer, physicalDamgeTaken);
@@ -63,7 +71,13 @@ public class Entity_Health : MonoBehaviour, IDamgable
         return true;
     }
 
-    private bool AttackEvaded() => Random.Range(0, 100) < entityStats.GetEvasion();
+    private bool AttackEvaded()
+    {
+        if (entityStats == null)
+            return false;
+        else
+            return Random.Range(0, 100) < entityStats.GetEvasion();
+    } 
 
 
     private void RegenerateHealth()
@@ -137,5 +151,11 @@ public class Entity_Health : MonoBehaviour, IDamgable
     }
 
     private float CalculateDuration(float damage) => IsHeavyDamage(damage) ? heavyKnockbackDuration : knockbackDuration;
-    private bool IsHeavyDamage(float damage) => damage / entityStats.GetMaxHealth() > heavyDamageThreshold;
+    private bool IsHeavyDamage(float damage)
+    {
+        if (entityStats == null)
+            return false;
+        else    
+            return damage / entityStats.GetMaxHealth() > heavyDamageThreshold;
+    }
 }

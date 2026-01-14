@@ -49,7 +49,7 @@ public class Player : Entity
     public Vector2 moveInput { get; private set; }
     public Vector2 mousePosition { get; private set; }
 
-    [Header("Input")]
+    [Header("Input help for controller, (Made with the help of AI)")]
     [Range(0f, 1f)]
     [Tooltip("Joystick deadzone / snap threshold. If axis magnitude >= this value it snaps to full (1).")]
     public float joystickSnapThreshold = 0.2f;
@@ -176,7 +176,7 @@ public class Player : Entity
         input.Player.CSpell.performed += ctx => skillManager.shard.TryUseSkill();
         input.Player.CSpell.performed += ctx => skillManager.timeEcho.TryUseSkill();
     }
-
+#region AI used to help with controller input
     private Vector2 ProcessMoveInput(Vector2 raw)
     {
         Vector2 processed = raw;
@@ -214,6 +214,8 @@ public class Player : Entity
         Vector2 aimScreen = (Vector2)playerScreenPos + raw * controllerAimRadius;
         mousePosition = aimScreen;
     }
+
+#endregion
 
     private void OnDisable()
     {
