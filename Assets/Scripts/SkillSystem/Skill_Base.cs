@@ -23,7 +23,7 @@ public class Skill_Base : MonoBehaviour
 
     public virtual void TryUseSkill()
     {
-        
+        SetSkillOnCooldown();
     }
 
     public void SetSkillUpgrade(UpgradeData upgrade)
