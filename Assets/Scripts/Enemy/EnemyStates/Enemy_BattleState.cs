@@ -10,21 +10,21 @@ public class Enemy_BattleState : EnemyState
     {
     }
 
+
     public override void Enter()
     {
         base.Enter();
+        UpdateBattleTimer();
 
-        if (enemy.PlayerDetected())
-        {
-            UpdateTargetIfNeeded();
-            UpdateBattleTimer();
-        }
+        if(player == null)
+            player = enemy.GetPlayerReference();
 
         if (ShouldRetreat())
-            {
-                rb.linearVelocity = new Vector2(enemy.retreatVelocity.x * -DirectionToPlayer(), enemy.retreatVelocity.y);
-                enemy.HandleFlip(DirectionToPlayer());
-            }
+        {
+            rb.linearVelocity =
+                new Vector2((enemy.retreatVelocity.x * enemy.activeSlowMultiplier) * -DirectionToPlayer(), enemy.retreatVelocity.y);
+            enemy.HandleFlip(DirectionToPlayer());
+        }
     }
 
     public override void Update()
@@ -32,7 +32,10 @@ public class Enemy_BattleState : EnemyState
         base.Update();
 
         if (enemy.PlayerDetected())
+        {
+            UpdateTargetIfNeeded();
             UpdateBattleTimer();
+        }
 
         if (BattleTimeIsOver())
             stateMachine.ChangeState(enemy.idleState);
@@ -40,18 +43,17 @@ public class Enemy_BattleState : EnemyState
         if (WithinAttackRange() && enemy.PlayerDetected())
             stateMachine.ChangeState(enemy.attackState);
         else
-            enemy.SetVelocity(enemy.battleMoveSpeed * DirectionToPlayer(), rb.linearVelocity.y);
+            enemy.SetVelocity(enemy.GetBattleMoveSpeed() * DirectionToPlayer(), rb.linearVelocity.y);
     }
 
     private void UpdateTargetIfNeeded()
     {
-
-        if(enemy.PlayerDetected() == false)
+        if (enemy.PlayerDetected() == false)
             return;
 
         Transform newTarget = enemy.PlayerDetected().transform;
 
-        if(newTarget != lastTarget)
+        if (newTarget != lastTarget)
         {
             lastTarget = newTarget;
             player = newTarget;

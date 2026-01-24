@@ -4,19 +4,20 @@ using UnityEngine;
 public class Enemy : Entity
 {
     [SerializeField] public GameObject enemyObject;
+    public Enemy_Health health { get; private set; }
     public Enemy_IdleState idleState;
     public Enemy_MoveState moveState;
     public Enemy_AttackState attackState;
     public Enemy_BattleState battleState;
-    public Enemy_DeadState deathstate;
+    public Enemy_DeadState deadState;
     public Enemy_StunnedState stunnedState;
 
     [Header("Battle details")]
     public float battleMoveSpeed = 3;
     public float attackDistance = 2;
-    public float battleTimeDuration = 5;
+    public float battleTimeDuration = 3;
     public float minRetreatDistance = 1;
-    public Vector2 retreatVelocity = new Vector2(5, 3);
+    public Vector2 retreatVelocity;
 
     [Header("Stunned state details")]
     public float stunnedDuration = 1;
@@ -26,7 +27,7 @@ public class Enemy : Entity
     [Header("Movement details")]
     public float idleTime = 2;
     public float moveSpeed = 1.4f;
-    [Range(0, 2)]
+    [Range(0,2)]
     public float moveAnimSpeedMultiplier = 1;
 
     [Header("Player detection")]
@@ -34,25 +35,36 @@ public class Enemy : Entity
     [SerializeField] private Transform playerCheck;
     [SerializeField] private float playerCheckDistance = 10;
     public Transform player { get; private set; }
+    public float activeSlowMultiplier { get; private set; } = 1;
 
-    protected override IEnumerator SlowDownEntityCo(float duration, float slowMultiplier)
+    public float GetMoveSpeed() => moveSpeed * activeSlowMultiplier;
+    public float GetBattleMoveSpeed() => battleMoveSpeed * activeSlowMultiplier;
+
+    protected override void Awake()
     {
-        float originalMoveSpeed = moveSpeed;
-        float originalBattleSpeed = battleMoveSpeed;
-        float originalAnimSpeed = anim.speed;
-
-        float speedMultiplier = 1 - slowMultiplier;
-
-        moveSpeed = moveSpeed * speedMultiplier;
-        battleMoveSpeed = battleMoveSpeed * speedMultiplier;
-        anim.speed = originalAnimSpeed * speedMultiplier;
-
-        yield return new WaitForSeconds(duration);
-
-        moveSpeed = originalMoveSpeed;
-        battleMoveSpeed = originalBattleSpeed;
-        anim.speed = originalAnimSpeed;
+        base.Awake();
+        health = GetComponent<Enemy_Health>();
     }
+
+    // protected override IEnumerator SlowDownEntityCo(float duration, float slowMultiplier)
+    // {
+
+    //     activeSlowMultiplier = 1 - slowMultiplier;
+
+
+    //     anim.speed = anim.speed * activeSlowMultiplier;
+
+    //     yield return new WaitForSeconds(duration);
+    //     StopSlowDown();
+    // }
+
+    // public override void StopSlowDown()
+    // {
+    //     activeSlowMultiplier = 1;
+    //     anim.speed = 1;
+    //     base.StopSlowDown();
+    // }
+
 
     public void EnableCounterWindow(bool enable) => canBeStunned = enable;
 
@@ -60,25 +72,31 @@ public class Enemy : Entity
     {
         base.EntityDeath();
 
-        stateMachine.ChangeState(deathstate);
+        stateMachine.ChangeState(deadState);
     }
-    public void HandlePlayerDeath()
+
+    private void HandlePlayerDeath()
     {
         stateMachine.ChangeState(idleState);
     }
+
     public void TryEnterBattleState(Transform player)
     {
-        if (stateMachine.currentState == battleState || stateMachine.currentState == attackState)
+        if (stateMachine.currentState == battleState)
+            return;
+
+        if (stateMachine.currentState == attackState)
             return;
 
         this.player = player;
         stateMachine.ChangeState(battleState);
     }
 
-    public Transform GetPlayerReferance()
+    public Transform GetPlayerReference()
     {
         if (player == null)
             player = PlayerDetected().transform;
+
         return player;
     }
 
@@ -105,12 +123,14 @@ public class Enemy : Entity
         Gizmos.DrawLine(playerCheck.position, new Vector3(playerCheck.position.x + (facingDir * minRetreatDistance), playerCheck.position.y));
 
     }
+
     private void OnEnable()
     {
         Player.OnPlayerDeath += HandlePlayerDeath;
     }
+
     private void OnDisable()
     {
-        Player.OnPlayerDeath -= HandlePlayerDeath;  
+       Player.OnPlayerDeath -= HandlePlayerDeath;  
     }
 }

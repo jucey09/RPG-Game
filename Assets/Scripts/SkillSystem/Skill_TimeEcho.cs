@@ -9,6 +9,13 @@ public class Skill_TimeEcho : Skill_Base
     [SerializeField] private int maxAttacks = 3;
     [SerializeField] private float duplicateChance = 0.3f;
 
+    public bool ShouldBeWisp()
+    {
+        return upgradeType == SkillUpgradeType.TimeEcho_HealWisp 
+        || upgradeType == SkillUpgradeType.TimeEcho_CleanseWisp
+        || upgradeType == SkillUpgradeType.TimeEcho_CooldownWisp;
+    }
+
     public float GetDuplicateChance()
     {
         if (upgradeType != SkillUpgradeType.TimeEcho_ChanceToDuplicate)

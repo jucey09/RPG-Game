@@ -12,7 +12,7 @@ public class Enemy_Skeleton : Enemy , ICounterable
         moveState = new Enemy_MoveState(this, stateMachine, "move");
         attackState = new Enemy_AttackState(this, stateMachine, "attack");
         battleState = new Enemy_BattleState(this, stateMachine, "battle");
-        deathstate = new Enemy_DeadState(this, stateMachine, "idle");
+        deadState = new Enemy_DeadState(this, stateMachine, "idle");
         stunnedState = new Enemy_StunnedState(this, stateMachine, "stunned");
     }
 
