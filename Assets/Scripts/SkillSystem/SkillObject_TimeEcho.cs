@@ -11,6 +11,10 @@ public class SkillObject_TimeEcho : SkillObject_Base
     private Transform playerTransform;
     private Skill_TimeEcho echoManager;
     private TrailRenderer wispTrail;
+    private Entity_Health playerhealth;
+    private SkillObject_Health echoHealth;
+    private Player_SkillManager skillManager;
+    private Entity_StatusHandler statusHandler;
 
     public int maxAttacks { get; private set; }
 
@@ -21,10 +25,14 @@ public class SkillObject_TimeEcho : SkillObject_Base
         damageScaleData = echoManager.damageScaleData;
         maxAttacks = echoManager.GetMaxAttacks();
         playerTransform = echoManager.transform.root;
+        playerhealth = echoManager.player.health;
+        skillManager = echoManager.skillManager;
+        statusHandler = echoManager.player.statusHandler;
 
         Invoke(nameof(HandleDeath), echoManager.GetEchoDuration());
         FlipToTarget();
 
+        echoHealth = GetComponent<SkillObject_Health>();
         wispTrail = GetComponentInChildren<TrailRenderer>();
         wispTrail.gameObject.SetActive(false);
 
@@ -40,8 +48,18 @@ public class SkillObject_TimeEcho : SkillObject_Base
             anim.SetFloat("yVelocity", rb.linearVelocity.y);
             StopHorizontalMovement();
         }
+    }
 
+    private void HandlePlayerTouch()
+    {
+        float healAmount = echoHealth.lastDamageTaken * echoManager.GetPercentOfDamageHealed();
+        playerhealth.IncreaseHealth(healAmount);
 
+        float amountInSeconds = echoManager.GetCooldownReduceInSeconds();
+        skillManager.ReduceAllSkillCooldownBy(amountInSeconds);
+
+        if(echoManager.CanRemoveNegativeEffects())
+            statusHandler.RemoveAllNegativeEffects();
     }
 
     private void HandleWispMovement()
@@ -55,10 +73,6 @@ public class SkillObject_TimeEcho : SkillObject_Base
         }
     }
 
-    private void HandlePlayerTouch()
-    {
-
-    }
 
     private void FlipToTarget()
     {
@@ -87,14 +101,17 @@ public class SkillObject_TimeEcho : SkillObject_Base
         Instantiate(onDeathVfx, transform.position, Quaternion.identity);
 
         if (echoManager.ShouldBeWisp())
-        {
-            shouldMoveToPlayer = true;
-            anim.gameObject.SetActive(false);
-            wispTrail.gameObject.SetActive(true);
-            rb.simulated = false;
-        }
+            TurnIntoWisp();
         else
             Destroy(gameObject);
+    }
+
+    private void TurnIntoWisp()
+    {
+        shouldMoveToPlayer = true;
+        anim.gameObject.SetActive(false);
+        wispTrail.gameObject.SetActive(true);
+        rb.simulated = false;
     }
 
     private void StopHorizontalMovement()

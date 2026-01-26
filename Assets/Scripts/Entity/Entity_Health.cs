@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +14,7 @@ public class Entity_Health : MonoBehaviour, IDamgable
     [Header("Health Regeneration")]
     [SerializeField] private float regenInterval = 1f;
     [SerializeField] private bool canRegenerateHealth = true;
+    public float lastDamageTaken {get; private set; }
 
     [Header("On Damage Knockback")]
     [SerializeField] private Vector2 knockbackPower = new Vector2(1.5f, 2.5f);
@@ -67,6 +67,8 @@ public class Entity_Health : MonoBehaviour, IDamgable
         TakeKnockback(damageDealer, physicalDamgeTaken);
 
         ReduceHealth(physicalDamgeTaken + elementalDamageTaken);
+
+        lastDamageTaken = physicalDamgeTaken + elementalDamageTaken;
 
         return true;
     }
