@@ -252,6 +252,15 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""UltimateSpell"",
+                    ""type"": ""Button"",
+                    ""id"": ""afb91f67-2fbe-476e-9135-379070dbf83b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -496,6 +505,17 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
                     ""action"": ""CAim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e06b2cd-13c4-40fc-acb8-467549bce8c0"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard & Mouse"",
+                    ""action"": ""UltimateSpell"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -578,6 +598,7 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         m_Player_CSpell = m_Player.FindAction("CSpell", throwIfNotFound: true);
         m_Player_CRangedAttack = m_Player.FindAction("CRangedAttack", throwIfNotFound: true);
         m_Player_CAim = m_Player.FindAction("CAim", throwIfNotFound: true);
+        m_Player_UltimateSpell = m_Player.FindAction("UltimateSpell", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
@@ -680,6 +701,7 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_CSpell;
     private readonly InputAction m_Player_CRangedAttack;
     private readonly InputAction m_Player_CAim;
+    private readonly InputAction m_Player_UltimateSpell;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -764,6 +786,10 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @CAim => m_Wrapper.m_Player_CAim;
         /// <summary>
+        /// Provides access to the underlying input action "Player/UltimateSpell".
+        /// </summary>
+        public InputAction @UltimateSpell => m_Wrapper.m_Player_UltimateSpell;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -843,6 +869,9 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
             @CAim.started += instance.OnCAim;
             @CAim.performed += instance.OnCAim;
             @CAim.canceled += instance.OnCAim;
+            @UltimateSpell.started += instance.OnUltimateSpell;
+            @UltimateSpell.performed += instance.OnUltimateSpell;
+            @UltimateSpell.canceled += instance.OnUltimateSpell;
         }
 
         /// <summary>
@@ -908,6 +937,9 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
             @CAim.started -= instance.OnCAim;
             @CAim.performed -= instance.OnCAim;
             @CAim.canceled -= instance.OnCAim;
+            @UltimateSpell.started -= instance.OnUltimateSpell;
+            @UltimateSpell.performed -= instance.OnUltimateSpell;
+            @UltimateSpell.canceled -= instance.OnUltimateSpell;
         }
 
         /// <summary>
@@ -1196,6 +1228,13 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCAim(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "UltimateSpell" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnUltimateSpell(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

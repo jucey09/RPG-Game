@@ -22,16 +22,31 @@ public abstract class PlayerState : EntityState
         base.Update();
 
         if (input.Player.Dash.WasPressedThisFrame() && CanDash())
-        { 
-            skillManager.dash.SetSkillOnCooldown();
-            stateMachine.ChangeState(player.dashState);
-        } else if (input.Player.CDash.WasPressedThisFrame() && CanDash())
         {
             skillManager.dash.SetSkillOnCooldown();
             stateMachine.ChangeState(player.dashState);
         }
-  
+        else if (input.Player.CDash.WasPressedThisFrame() && CanDash())
+        {
+            skillManager.dash.SetSkillOnCooldown();
+            stateMachine.ChangeState(player.dashState);
+        }
+
+        if (input.Player.UltimateSpell.WasPressedThisFrame() && skillManager.domainExpansion.CanUseSkill())
+        {
+            if (skillManager.domainExpansion.InstantDomain())
+            {
+                skillManager.domainExpansion.CreateDomain(); 
+            }
+            else
+            {
+                stateMachine.ChangeState(player.domainExpansionState);
+            }
+
+            skillManager.domainExpansion.SetSkillOnCooldown();
+        }
     }
+
 
     public override void UpdateAnimationParameters()
     {
@@ -41,7 +56,7 @@ public abstract class PlayerState : EntityState
 
     private bool CanDash()
     {
-        if(skillManager.dash.CanUseSkill() == false)
+        if (skillManager.dash.CanUseSkill() == false)
             return false;
 
         if (player.wallDetected)
