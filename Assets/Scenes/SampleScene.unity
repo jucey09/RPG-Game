@@ -5357,8 +5357,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillType: 4
-  upgradeType: 23
+  upgradeType: 22
   cooldown: 0
+  domainPrefab: {fileID: 8283949070552169509, guid: ff5411426e280436f9438509b4e3501f, type: 3}
+  maxDomainSize: 10
+  expandSpeed: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
