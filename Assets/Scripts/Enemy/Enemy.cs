@@ -27,7 +27,7 @@ public class Enemy : Entity
     [Header("Movement details")]
     public float idleTime = 2;
     public float moveSpeed = 1.4f;
-    [Range(0,2)]
+    [Range(0, 2)]
     public float moveAnimSpeedMultiplier = 1;
 
     [Header("Player detection")]
@@ -46,24 +46,22 @@ public class Enemy : Entity
         health = GetComponent<Enemy_Health>();
     }
 
-    // protected override IEnumerator SlowDownEntityCo(float duration, float slowMultiplier)
-    // {
+    protected override IEnumerator SlowDownEntityCo(float duration, float slowMultiplier)
+    {
 
-    //     activeSlowMultiplier = 1 - slowMultiplier;
+        activeSlowMultiplier = 1 - slowMultiplier;
+        anim.speed = anim.speed * activeSlowMultiplier;
 
+        yield return new WaitForSeconds(duration);
+        StopSlowDown();
+    }
 
-    //     anim.speed = anim.speed * activeSlowMultiplier;
-
-    //     yield return new WaitForSeconds(duration);
-    //     StopSlowDown();
-    // }
-
-    // public override void StopSlowDown()
-    // {
-    //     activeSlowMultiplier = 1;
-    //     anim.speed = 1;
-    //     base.StopSlowDown();
-    // }
+    public override void StopSlowDown()
+    {
+        activeSlowMultiplier = 1;
+        anim.speed = 1;
+        base.StopSlowDown();
+    }
 
 
     public void EnableCounterWindow(bool enable) => canBeStunned = enable;
@@ -131,6 +129,6 @@ public class Enemy : Entity
 
     private void OnDisable()
     {
-       Player.OnPlayerDeath -= HandlePlayerDeath;  
+        Player.OnPlayerDeath -= HandlePlayerDeath;
     }
 }

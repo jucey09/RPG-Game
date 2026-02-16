@@ -68,6 +68,11 @@ public class Entity : MonoBehaviour
         yield return null;
     }
 
+    public virtual void StopSlowDown()
+    {
+        slowDownCo = null;
+    }
+
     public void ReciveKnockback(Vector2 knockback, float duration)
     {
         if (knockbackCo != null)

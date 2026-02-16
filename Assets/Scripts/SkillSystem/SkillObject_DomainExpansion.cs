@@ -65,5 +65,6 @@ public class SkillObject_DomainExpansion : SkillObject_Base
         if (enemy != null)
             return;
 
+        enemy.StopSlowDown();
     }
 }
