@@ -52,17 +52,17 @@ public class SkillObject_DomainExpansion : SkillObject_Base
     {
         Enemy enemy = collision.GetComponent<Enemy>();
 
-        if (enemy != null)
+        if (enemy == null)
             return;
         
-        enemy.SlowDownEntity(duration, slowDownPercent);
+        enemy.SlowDownEntity(duration, slowDownPercent, true);
         
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         Enemy enemy = collision.GetComponent<Enemy>();
 
-        if (enemy != null)
+        if (enemy == null)
             return;
 
         enemy.StopSlowDown();

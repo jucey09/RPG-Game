@@ -3396,7 +3396,7 @@ MonoBehaviour:
       baseValue: 0
       modifiers: []
     iceDamage:
-      baseValue: 0
+      baseValue: 10
       modifiers: []
     lightningDamage:
       baseValue: 10
@@ -4052,8 +4052,8 @@ RectTransform:
   - {fileID: 2129821717}
   - {fileID: 1686871357}
   - {fileID: 1357503836}
-  - {fileID: 978437816}
   - {fileID: 238180326}
+  - {fileID: 978437816}
   m_Father: {fileID: 266310778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5360,6 +5360,10 @@ MonoBehaviour:
   upgradeType: 22
   cooldown: 0
   domainPrefab: {fileID: 8283949070552169509, guid: ff5411426e280436f9438509b4e3501f, type: 3}
+  slowDownPercent: 0.8
+  slowDownDomainDuration: 5
+  spellcastingDomainSlowDowm: 1
+  spellCastingDomainDuration: 8
   maxDomainSize: 10
   expandSpeed: 2
 --- !u!1 &519420028
@@ -77079,9 +77083,9 @@ RectTransform:
   m_Children:
   - {fileID: 1285174301}
   - {fileID: 1295115274}
+  - {fileID: 1021513339}
   - {fileID: 882246190}
   - {fileID: 2075161566}
-  - {fileID: 1021513339}
   m_Father: {fileID: 266310778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -79661,10 +79665,10 @@ RectTransform:
   - {fileID: 944213634}
   - {fileID: 961394072}
   - {fileID: 1579683270}
-  - {fileID: 245810637}
-  - {fileID: 831094039}
   - {fileID: 1318714749}
   - {fileID: 2065263044}
+  - {fileID: 245810637}
+  - {fileID: 831094039}
   m_Father: {fileID: 266310778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

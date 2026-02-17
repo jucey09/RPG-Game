@@ -56,11 +56,16 @@ public class Entity : MonoBehaviour
     {
 
     }
-    public virtual void SlowDownEntity(float durtaion, float slowMultiplier)
+    public virtual void SlowDownEntity(float durtaion, float slowMultiplier, bool canOverrideSlowEffect = false)
     {
         if (slowDownCo != null)
-            StopCoroutine(slowDownCo);
-            
+        {
+            if(canOverrideSlowEffect)
+                StopCoroutine(slowDownCo);
+            else
+                return;
+        }
+
         slowDownCo = StartCoroutine(SlowDownEntityCo(durtaion, slowMultiplier));
     }
     protected virtual IEnumerator SlowDownEntityCo(float duration, float slowMultiplier)
@@ -135,7 +140,7 @@ public class Entity : MonoBehaviour
         Gizmos.DrawLine(groundCheck.position, groundCheck.position + new Vector3(0, -groundCheckDistance));
         Gizmos.DrawLine(primaryWallCheck.position, primaryWallCheck.position + new Vector3(wallCheckDistance * facingDir, 0));
 
-        if(secondaryWallCheck != null)
+        if (secondaryWallCheck != null)
             Gizmos.DrawLine(secondaryWallCheck.position, secondaryWallCheck.position + new Vector3(wallCheckDistance * facingDir, 0));
     }
 }

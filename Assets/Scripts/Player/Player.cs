@@ -56,9 +56,7 @@ public class Player : Entity
 
     [Header("Input help for controller, (Made with the help of AI)")]
     [Range(0f, 1f)]
-    [Tooltip("Joystick deadzone / snap threshold. If axis magnitude >= this value it snaps to full (1).")]
     public float joystickSnapThreshold = 0.2f;
-    [Tooltip("When using controller stick for aiming, how many screen pixels from the player the stick maps to at full tilt.")]
     public float controllerAimRadius = 200f;
 
     protected override void Awake()
@@ -182,6 +180,7 @@ public class Player : Entity
         input.Player.CSpell.performed += ctx => skillManager.shard.TryUseSkill();
         input.Player.CSpell.performed += ctx => skillManager.timeEcho.TryUseSkill();
     }
+    
 #region AI used to help with controller input
     private Vector2 ProcessMoveInput(Vector2 raw)
     {
