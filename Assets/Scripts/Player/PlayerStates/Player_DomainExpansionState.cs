@@ -9,6 +9,8 @@ public class Player_DomainExpansionState : PlayerState
     private bool isLevitating;
     private bool createdDomain;
 
+    public bool IsLevitating => isLevitating;
+
     public Player_DomainExpansionState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
     }
@@ -35,17 +37,20 @@ public class Player_DomainExpansionState : PlayerState
 
         if (isLevitating)
         {
+            skillManager.domainExpansion.DoSpellCasting();
+
             if(stateTimer < 0)
+            {
+                isLevitating = false;
+                rb.gravityScale = originalGravity;
                 stateMachine.ChangeState(player.idleState);
+            }
         }
     }
 
     public override void Exit()
     {
         base.Exit();
-
-        rb.gravityScale = originalGravity;
-        isLevitating = false;
         createdDomain = false;
     }
 
@@ -55,7 +60,7 @@ public class Player_DomainExpansionState : PlayerState
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 0;
 
-        stateTimer = 2;
+        stateTimer = skillManager.domainExpansion.GetDomainDuration();
 
         if(createdDomain == false)
         {

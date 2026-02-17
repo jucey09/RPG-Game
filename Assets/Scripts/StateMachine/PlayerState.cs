@@ -62,6 +62,9 @@ public abstract class PlayerState : EntityState
         if (player.wallDetected)
             return false;
 
+        if (player.domainExpansionState != null && player.domainExpansionState.IsLevitating)
+            return false;
+
         if (stateMachine.currentState == player.dashState)
             return false;
 

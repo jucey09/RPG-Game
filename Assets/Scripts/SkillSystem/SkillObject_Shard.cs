@@ -20,9 +20,9 @@ public class SkillObject_Shard : SkillObject_Base
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
-    public void MoveTowardsClosestTarget(float speed)
+    public void MoveTowardsClosestTarget(float speed, Transform newTarget = null)
     {
-        target = FindClosestTarget();
+        target = newTarget == null ? FindClosestTarget() : newTarget;
         this.speed = speed;
     }
 
@@ -38,7 +38,7 @@ public class SkillObject_Shard : SkillObject_Base
         Invoke(nameof(Explode), detinationTime);
     }
 
-    public void SetupShard(Skill_Shard shardManager, float detinationTime, bool canMove, float shardSpeed)
+    public void SetupShard(Skill_Shard shardManager, float detinationTime, bool canMove, float shardSpeed, Transform target = null)
     {
         this.shardManager = shardManager;
 
@@ -49,8 +49,10 @@ public class SkillObject_Shard : SkillObject_Base
         Invoke(nameof(Explode), detinationTime);
 
         if (canMove)
-            MoveTowardsClosestTarget(shardSpeed);
+            MoveTowardsClosestTarget(shardSpeed, target);
     }
+
+
 
     public void Explode()
     {

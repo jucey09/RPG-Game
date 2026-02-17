@@ -35,11 +35,17 @@ public class SkillObject_DomainExpansion : SkillObject_Base
         float sizeDiffrence = Mathf.Abs(transform.localScale.x - targetScale.x);
         bool shouldChangeScale = sizeDiffrence > 0.1f;
 
-        if(shouldChangeScale)
+        if (shouldChangeScale)
             transform.localScale = Vector3.Lerp(transform.localScale, targetScale, expandSpeed * Time.deltaTime);
 
-        if(isShrinking && sizeDiffrence < 0.1f)
-            Destroy(gameObject);
+        if (isShrinking && sizeDiffrence < 0.1f)
+            TerminateDomain();
+    }
+
+    private void TerminateDomain()
+    {
+        domainManager.ClearTargets();
+        Destroy(gameObject);
     }
 
     private void ShrinkDomain()
@@ -54,9 +60,10 @@ public class SkillObject_DomainExpansion : SkillObject_Base
 
         if (enemy == null)
             return;
-        
+
+        domainManager.AddTarget(enemy);
         enemy.SlowDownEntity(duration, slowDownPercent, true);
-        
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
