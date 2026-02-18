@@ -173,6 +173,15 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""UltimateSpell"",
+                    ""type"": ""Button"",
+                    ""id"": ""afb91f67-2fbe-476e-9135-379070dbf83b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""CMovement"",
                     ""type"": ""Value"",
                     ""id"": ""9838c5f9-dd31-4450-8a32-615f92f3ca5f"",
@@ -252,15 +261,6 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""UltimateSpell"",
-                    ""type"": ""Button"",
-                    ""id"": ""afb91f67-2fbe-476e-9135-379070dbf83b"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -589,6 +589,7 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         m_Player_Spell = m_Player.FindAction("Spell", throwIfNotFound: true);
         m_Player_RangeAttack = m_Player.FindAction("RangeAttack", throwIfNotFound: true);
         m_Player_Mouse = m_Player.FindAction("Mouse", throwIfNotFound: true);
+        m_Player_UltimateSpell = m_Player.FindAction("UltimateSpell", throwIfNotFound: true);
         m_Player_CMovement = m_Player.FindAction("CMovement", throwIfNotFound: true);
         m_Player_CJump = m_Player.FindAction("CJump", throwIfNotFound: true);
         m_Player_CDash = m_Player.FindAction("CDash", throwIfNotFound: true);
@@ -598,7 +599,6 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         m_Player_CSpell = m_Player.FindAction("CSpell", throwIfNotFound: true);
         m_Player_CRangedAttack = m_Player.FindAction("CRangedAttack", throwIfNotFound: true);
         m_Player_CAim = m_Player.FindAction("CAim", throwIfNotFound: true);
-        m_Player_UltimateSpell = m_Player.FindAction("UltimateSpell", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
@@ -692,6 +692,7 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Spell;
     private readonly InputAction m_Player_RangeAttack;
     private readonly InputAction m_Player_Mouse;
+    private readonly InputAction m_Player_UltimateSpell;
     private readonly InputAction m_Player_CMovement;
     private readonly InputAction m_Player_CJump;
     private readonly InputAction m_Player_CDash;
@@ -701,7 +702,6 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_CSpell;
     private readonly InputAction m_Player_CRangedAttack;
     private readonly InputAction m_Player_CAim;
-    private readonly InputAction m_Player_UltimateSpell;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -750,6 +750,10 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Mouse => m_Wrapper.m_Player_Mouse;
         /// <summary>
+        /// Provides access to the underlying input action "Player/UltimateSpell".
+        /// </summary>
+        public InputAction @UltimateSpell => m_Wrapper.m_Player_UltimateSpell;
+        /// <summary>
         /// Provides access to the underlying input action "Player/CMovement".
         /// </summary>
         public InputAction @CMovement => m_Wrapper.m_Player_CMovement;
@@ -785,10 +789,6 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/CAim".
         /// </summary>
         public InputAction @CAim => m_Wrapper.m_Player_CAim;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/UltimateSpell".
-        /// </summary>
-        public InputAction @UltimateSpell => m_Wrapper.m_Player_UltimateSpell;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -842,6 +842,9 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
             @Mouse.started += instance.OnMouse;
             @Mouse.performed += instance.OnMouse;
             @Mouse.canceled += instance.OnMouse;
+            @UltimateSpell.started += instance.OnUltimateSpell;
+            @UltimateSpell.performed += instance.OnUltimateSpell;
+            @UltimateSpell.canceled += instance.OnUltimateSpell;
             @CMovement.started += instance.OnCMovement;
             @CMovement.performed += instance.OnCMovement;
             @CMovement.canceled += instance.OnCMovement;
@@ -869,9 +872,6 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
             @CAim.started += instance.OnCAim;
             @CAim.performed += instance.OnCAim;
             @CAim.canceled += instance.OnCAim;
-            @UltimateSpell.started += instance.OnUltimateSpell;
-            @UltimateSpell.performed += instance.OnUltimateSpell;
-            @UltimateSpell.canceled += instance.OnUltimateSpell;
         }
 
         /// <summary>
@@ -910,6 +910,9 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
             @Mouse.started -= instance.OnMouse;
             @Mouse.performed -= instance.OnMouse;
             @Mouse.canceled -= instance.OnMouse;
+            @UltimateSpell.started -= instance.OnUltimateSpell;
+            @UltimateSpell.performed -= instance.OnUltimateSpell;
+            @UltimateSpell.canceled -= instance.OnUltimateSpell;
             @CMovement.started -= instance.OnCMovement;
             @CMovement.performed -= instance.OnCMovement;
             @CMovement.canceled -= instance.OnCMovement;
@@ -937,9 +940,6 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
             @CAim.started -= instance.OnCAim;
             @CAim.performed -= instance.OnCAim;
             @CAim.canceled -= instance.OnCAim;
-            @UltimateSpell.started -= instance.OnUltimateSpell;
-            @UltimateSpell.performed -= instance.OnUltimateSpell;
-            @UltimateSpell.canceled -= instance.OnUltimateSpell;
         }
 
         /// <summary>
@@ -1166,6 +1166,13 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMouse(InputAction.CallbackContext context);
         /// <summary>
+        /// Method invoked when associated input action "UltimateSpell" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnUltimateSpell(InputAction.CallbackContext context);
+        /// <summary>
         /// Method invoked when associated input action "CMovement" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
@@ -1228,13 +1235,6 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCAim(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "UltimateSpell" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnUltimateSpell(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

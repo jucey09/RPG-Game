@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72036f8fac6934236acfabc539db57b2, type: 3}
-  m_Name: Skill data - The Xenablade
+  m_Name: Skill data - The chainsaw
   m_EditorClassIdentifier: 
-  displayName: The Xenablade
-  description: The sword bounces between enemies up to 5 times.
-  icon: {fileID: -1443817130, guid: 86f3dfc2bab5847d49f7bc5358656640, type: 3}
+  displayName: The Chainsaw
+  description: The sword spins like a chainsaw for 5 seconds.
+  icon: {fileID: 2125842968, guid: 86f3dfc2bab5847d49f7bc5358656640, type: 3}
   cost: 2
   unlockedByDefault: 0
   skillType: 3
   upgradeData:
-    upgradeType: 14
-    cooldown: 0
+    upgradeType: 12
+    cooldown: 3
     damageScaleData:
       physical: 1
       elemental: 1

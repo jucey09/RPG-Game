@@ -87,6 +87,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "UltimateSpell",
+                    "type": "Button",
+                    "id": "afb91f67-2fbe-476e-9135-379070dbf83b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "CMovement",
                     "type": "Value",
                     "id": "9838c5f9-dd31-4450-8a32-615f92f3ca5f",
@@ -166,15 +175,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateSpell",
-                    "type": "Button",
-                    "id": "afb91f67-2fbe-476e-9135-379070dbf83b",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
