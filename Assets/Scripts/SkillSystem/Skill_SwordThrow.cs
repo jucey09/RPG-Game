@@ -13,7 +13,7 @@ public class Skill_SwordThrow : Skill_Base
     [Header("Pierce Sword Upgrade")]
     [SerializeField] private GameObject pierceSwordPrefab;
     [SerializeField] public int amountToPierce = 5;
-        [Range(0, 10)]
+    [Range(0, 10)]
     [SerializeField] private float pierceThrowPower = 5;
 
     [Header("Spin Sword Upgrade")]
@@ -67,6 +67,8 @@ public class Skill_SwordThrow : Skill_Base
 
         currentSword = newSword.GetComponent<SkillObject_Sword>();
         currentSword.SetupSword(this, GetThrowPower());
+
+        SetSkillOnCooldown();
     }
 
     private GameObject GetSwordPrefab()
@@ -83,8 +85,6 @@ public class Skill_SwordThrow : Skill_Base
         if(Unlocked(SkillUpgradeType.SwordThrow_Bounce))
             return bounceSwordPrefab;
         
-        
-        Debug.Log("No valid sword upgrade selected.");
         return null;
     }
 

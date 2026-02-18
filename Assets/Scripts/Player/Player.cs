@@ -171,6 +171,7 @@ public class Player : Entity
         input.Player.Spell.performed += ctx => skillManager.timeEcho.TryUseSkill();
 
         //controller
+        
         input.Player.CAim.performed += ctx => ProcessControllerAim(ctx.ReadValue<Vector2>());
 
         input.Player.CMovement.performed += ctx => moveInput = ProcessMoveInput(ctx.ReadValue<Vector2>());
