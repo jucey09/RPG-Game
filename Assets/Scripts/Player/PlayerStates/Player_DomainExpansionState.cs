@@ -9,8 +9,6 @@ public class Player_DomainExpansionState : PlayerState
     private bool isLevitating;
     private bool createdDomain;
 
-    public bool IsLevitating => isLevitating;
-
     public Player_DomainExpansionState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
     }
@@ -24,6 +22,7 @@ public class Player_DomainExpansionState : PlayerState
         maxDistanceToGoUp = GetAvailableRiseDistance();
 
         player.SetVelocity(0, player.riseSpeed);
+        player.health.setCanTakeDamage(false);
     }
 
     public override void Update()
@@ -52,6 +51,7 @@ public class Player_DomainExpansionState : PlayerState
     {
         base.Exit();
         createdDomain = false;
+        player.health.setCanTakeDamage(true);
     }
 
     private void Levitate()

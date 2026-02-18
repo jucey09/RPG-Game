@@ -9,12 +9,17 @@ public class Skill_DomainExpansion : Skill_Base
     [SerializeField] private float slowDownPercent = 0.8f;
     [SerializeField] private float slowDownDomainDuration = 5;
 
-    [Header("Spell Casting Upgrade")]
-    [SerializeField] private int spellsToCast = 10;
-    [SerializeField] private float spellcastingDomainSlowDowm = 1;
-    [SerializeField] private float spellCastingDomainDuration = 8;
+    [Header("Shard Cast Upgrade")]
+    [SerializeField] private int shardsToCast = 10;
+    [SerializeField] private float shardCastDomainSlow = 1;
+    [SerializeField] private float shardCastDomainDuration = 8;
     private float spellCastTimer;
     private float spellPerSecond;
+
+    [Header("Time Echo Cast Upgrade")]
+    [SerializeField] private int echoToCast = 8;
+    [SerializeField] private float echoCastDomainSlow = 1;
+    [SerializeField] private float echoCastDomainDuration = 6;
 
     [Header("Domain Details")]
     public float maxDomainSize = 10;
@@ -25,7 +30,7 @@ public class Skill_DomainExpansion : Skill_Base
 
     public void CreateDomain()
     {
-        spellPerSecond = spellsToCast / GetDomainDuration();
+        spellPerSecond = GetSpellsToCast() / GetDomainDuration();
 
         GameObject domain = Instantiate(domainPrefab, transform.position, Quaternion.identity);
         domain.GetComponent<SkillObject_DomainExpansion>().SetupDomain(this);
@@ -34,7 +39,7 @@ public class Skill_DomainExpansion : Skill_Base
     {
         spellCastTimer -= Time.deltaTime;
 
-        if(currentTarget == null)
+        if (currentTarget == null)
             currentTarget = FindTargetInDomain();
 
         if (currentTarget != null && spellCastTimer < 0)
@@ -47,13 +52,13 @@ public class Skill_DomainExpansion : Skill_Base
 
     private void CastSpell(Transform target)
     {
-        if(upgradeType == SkillUpgradeType.Domain_EchoSpam)
+        if (upgradeType == SkillUpgradeType.Domain_EchoSpam)
         {
-            Vector3 offset = Random.value < 0.5f ? new Vector2(1,0) : new Vector2(-1,0);
+            Vector3 offset = Random.value < 0.5f ? new Vector2(1, 0) : new Vector2(-1, 0);
             skillManager.timeEcho.CreateTimeEcho(target.position + offset);
         }
 
-        if(upgradeType == SkillUpgradeType.Domain_ShardSpam)
+        if (upgradeType == SkillUpgradeType.Domain_ShardSpam)
         {
             skillManager.shard.CreateRawShard(target, true);
         }
@@ -61,35 +66,47 @@ public class Skill_DomainExpansion : Skill_Base
 
     private Transform FindTargetInDomain()
     {
+        trappedTragets.RemoveAll(target => target == null || target.health.isDead);
+
         if(trappedTragets.Count == 0)
             return null;
 
         int randomIndex = Random.Range(0, trappedTragets.Count);
-        Transform target = trappedTragets[randomIndex].transform;
-
-        if(target == null)
-        {
-            trappedTragets.RemoveAt(randomIndex);
-            return null;
-        }
-
-        return target;
+        return trappedTragets[randomIndex].transform;
     }
 
     public float GetDomainDuration()
     {
         if (upgradeType == SkillUpgradeType.Domain_SlowingDown)
             return slowDownDomainDuration;
-        else
-            return spellCastingDomainDuration;
+        else if (upgradeType == SkillUpgradeType.Domain_ShardSpam)
+            return shardCastDomainDuration;
+        else if (upgradeType == SkillUpgradeType.Domain_EchoSpam)
+            return echoCastDomainDuration;
+
+        return 0;
     }
 
     public float GetSlowPercentage()
     {
-        if(upgradeType == SkillUpgradeType.Domain_SlowingDown)
+        if (upgradeType == SkillUpgradeType.Domain_SlowingDown)
             return slowDownPercent;
-        else
-            return spellcastingDomainSlowDowm;
+        else if (upgradeType == SkillUpgradeType.Domain_ShardSpam)
+            return shardCastDomainSlow;
+        else if (upgradeType == SkillUpgradeType.Domain_EchoSpam)
+            return echoCastDomainSlow;
+
+        return 0;
+    }
+
+    private int GetSpellsToCast()
+    {
+        if (upgradeType == SkillUpgradeType.Domain_ShardSpam)
+            return shardsToCast;
+        else if (upgradeType == SkillUpgradeType.Domain_EchoSpam)
+            return echoToCast;
+
+        return 0;
     }
 
     public bool InstantDomain()
@@ -105,7 +122,7 @@ public class Skill_DomainExpansion : Skill_Base
 
     public void ClearTargets()
     {
-        foreach(var enemy in trappedTragets)
+        foreach (var enemy in trappedTragets)
             enemy.StopSlowDown();
 
         trappedTragets = new List<Enemy>();

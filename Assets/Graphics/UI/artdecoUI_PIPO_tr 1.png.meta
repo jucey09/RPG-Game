@@ -1,10 +1,61 @@
 fileFormatVersion: 2
-guid: 46d4c467c17b544e8b61dea42a27d9d2
+guid: 71f61328454714da8972381189884d08
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5457132565505971404
-    second: artdecoUI_PIPO_wb_0
+      213: 5717465431152502704
+    second: artdecoUI_PIPO_tr_0
+  - first:
+      213: -8483078968825879121
+    second: artdecoUI_PIPO_tr_1
+  - first:
+      213: 5667886818184199621
+    second: artdecoUI_PIPO_tr_2
+  - first:
+      213: 8873148660884924651
+    second: artdecoUI_PIPO_tr_3
+  - first:
+      213: -4337061765396970221
+    second: artdecoUI_PIPO_tr_4
+  - first:
+      213: 6922482108924444203
+    second: artdecoUI_PIPO_tr_5
+  - first:
+      213: -6224963432242557824
+    second: artdecoUI_PIPO_tr_6
+  - first:
+      213: -5346903199351845522
+    second: artdecoUI_PIPO_tr_7
+  - first:
+      213: -130124589838805200
+    second: artdecoUI_PIPO_tr_8
+  - first:
+      213: 6800534220888195548
+    second: artdecoUI_PIPO_tr_9
+  - first:
+      213: 695676408987397256
+    second: artdecoUI_PIPO_tr_10
+  - first:
+      213: -7807677970352061694
+    second: artdecoUI_PIPO_tr_11
+  - first:
+      213: -5746767291029893529
+    second: artdecoUI_PIPO_tr_12
+  - first:
+      213: -6717455920843234165
+    second: artdecoUI_PIPO_tr_13
+  - first:
+      213: -2129552351283700800
+    second: artdecoUI_PIPO_tr_14
+  - first:
+      213: -8315971036930536292
+    second: artdecoUI_PIPO_tr_15
+  - first:
+      213: -8366100132398584210
+    second: artdecoUI_PIPO_tr_16
+  - first:
+      213: -4395108056127522735
+    second: artdecoUI_PIPO_tr_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +88,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +102,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +126,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +151,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: artdecoUI_PIPO_wb_0
+      name: artdecoUI_PIPO_tr 1_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1500
-        height: 915
+        x: 311
+        y: 673
+        width: 312
+        height: 195
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cc4133bb721abbb40800000000000000
-      internalID: 5457132565505971404
+      spriteID: 6f1db48aaabc1402eada12220cd4c0e0
+      internalID: -1870003806
       vertices: []
       indices: 
       edges: []
@@ -125,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e8e5d8f58a38d468d844ef152ffb0ba3
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +186,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      artdecoUI_PIPO_wb_0: 5457132565505971404
+      artdecoUI_PIPO_tr 1_0: -1961071306
+      artdecoUI_PIPO_tr 1_1: -1870003806
+      artdecoUI_PIPO_tr 1_10: 1459454903
+      artdecoUI_PIPO_tr 1_11: 1444939459
+      artdecoUI_PIPO_tr 1_12: -30866606
+      artdecoUI_PIPO_tr 1_13: 1502292812
+      artdecoUI_PIPO_tr 1_14: -1142084939
+      artdecoUI_PIPO_tr 1_15: -1481255821
+      artdecoUI_PIPO_tr 1_16: -1636990636
+      artdecoUI_PIPO_tr 1_17: -2064038891
+      artdecoUI_PIPO_tr 1_2: 2115951951
+      artdecoUI_PIPO_tr 1_3: 499214587
+      artdecoUI_PIPO_tr 1_4: 1328951476
+      artdecoUI_PIPO_tr 1_5: -2043892452
+      artdecoUI_PIPO_tr 1_6: 1412096027
+      artdecoUI_PIPO_tr 1_7: -1111663113
+      artdecoUI_PIPO_tr 1_8: 301387105
+      artdecoUI_PIPO_tr 1_9: 2004299988
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
