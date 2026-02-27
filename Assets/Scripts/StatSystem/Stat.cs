@@ -32,7 +32,6 @@ public class Stat
     public void RemoveModifier(string source)
     {
         modifiers.RemoveAll(modifier => modifier.source == source);
-
     }
     private float GetFinalValue()
     {
@@ -46,7 +45,7 @@ public class Stat
         return finalValue;
     }
     public void SetBaseValue(float value) => baseValue = value;
-    
+
 }
 
 [Serializable]

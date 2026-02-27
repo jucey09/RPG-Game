@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62f4b7582d0844096aad7f6e038b6631, type: 3}
-  m_Name: Material data - Leather
+  m_Name: Material Data - Leather
   m_EditorClassIdentifier: 
   itemName: Hide
   itemIcon: {fileID: -2115861501, guid: 86f3dfc2bab5847d49f7bc5358656640, type: 3}

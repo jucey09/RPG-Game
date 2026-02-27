@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "RPG Setup/Item Data/Material", fileName = "Material data - ")]
+[CreateAssetMenu(menuName = "RPG Setup/Item Data/Material", fileName = "Material Data - ")]
 public class ItemDataSO : ScriptableObject
 {
     public string itemName;
