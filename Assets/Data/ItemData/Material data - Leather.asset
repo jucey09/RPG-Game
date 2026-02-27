@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Hide
   itemIcon: {fileID: -2115861501, guid: 86f3dfc2bab5847d49f7bc5358656640, type: 3}
   itemType: 0
+  maxStackSize: 2
