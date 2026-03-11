@@ -24,8 +24,13 @@ public class Inventory_Player : Inventory_Base
                 EquipItem(inventoryItem, slot);
                 return;
             }
-
         }
+
+        var slotToReplace = matchingSlots[0];
+        var itemToUnequip = slotToReplace.equippedItem;
+
+        EquipItem(inventoryItem, slotToReplace);
+        UnequipItem(itemToUnequip);
     }
     private void EquipItem(Inventory_Item itemToEquip, Inventory_EquipmentSlot slot)
     {
@@ -33,5 +38,22 @@ public class Inventory_Player : Inventory_Base
         slot.equippedItem.AddModifiers(playerStats);
 
         RemoveItem(itemToEquip);
+    }
+
+    public void UnequipItem(Inventory_Item itemToUnequip)
+    {
+        if(CanAddItem() == false)
+            return;
+
+        foreach(var slot in equipmentList)
+        {
+            if(slot.equippedItem == itemToUnequip)
+            {
+                slot.equippedItem = null;
+                break;
+            }
+        }
+        itemToUnequip.RemoveModifiers(playerStats);
+        AddItem(itemToUnequip);
     }
 }

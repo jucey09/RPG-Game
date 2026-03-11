@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfac1eb7db03145b4bd8ca909ed0c3f2, type: 3}
+  m_Name: Equipment Data - Ring of Providence
+  m_EditorClassIdentifier: 
+  itemName: Ring of Providence
+  itemIcon: {fileID: 1662818489, guid: 86f3dfc2bab5847d49f7bc5358656640, type: 3}
+  itemType: 3
+  maxStackSize: 1
+  modifiers:
+  - statType: 0
+    value: 50
+  - statType: 8
+    value: 15
+  - statType: 14
+    value: 5

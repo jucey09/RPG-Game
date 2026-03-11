@@ -3,6 +3,8 @@ using UnityEngine;
 [Serializable]
 public class Inventory_Item
 {
+
+    private string itemID;
     public ItemDataSO itemData;
     public int stackSize = 1;
 
@@ -11,6 +13,8 @@ public class Inventory_Item
     {
         this.itemData = itemData;
         modifiers = EquipmentData()?.modifiers;
+
+        itemID = itemData.itemName + " - " + Guid.NewGuid();
     }
 
     private EquipmentDataSO EquipmentData()
@@ -25,7 +29,7 @@ public class Inventory_Item
         foreach(var mod in modifiers)
         {
             Stat statToModify = playerStats.GetStatByType(mod.statType);
-            statToModify.AddModifier(mod.value, itemData.itemName);
+            statToModify.AddModifier(mod.value, itemID);
         }
     }
 
@@ -34,7 +38,7 @@ public class Inventory_Item
         foreach(var mod in modifiers)
         {
             Stat statToModify = playerStats.GetStatByType(mod.statType);
-            statToModify.RemoveModifier(itemData.itemName);
+            statToModify.RemoveModifier(itemID);
         }
     }
 

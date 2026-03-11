@@ -84,7 +84,6 @@ public class Player : Entity
         counterAttackState = new Player_CounterAttackState(this, stateMachine, "counterAttack");
         swordThrowState = new Player_SwordThrowState(this, stateMachine, "swordThrow");
         domainExpansionState = new Player_DomainExpansionState(this, stateMachine, "jumpFall");
-
     }
 
     protected override void Start()
